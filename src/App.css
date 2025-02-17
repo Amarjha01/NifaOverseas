@@ -1,0 +1,36 @@
+.neue{
+    font-family: neue;
+}
+
+@property --angle{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+  }
+  
+  .Resume::after , .Resume::before{
+
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 24px;
+    z-index: -10;
+    padding: 30px 58px 30px 58px; 
+    background-image: conic-gradient(from var(--angle), #FF5733, #FFC300, #DAF7A6, #900C3F , #FF5733);
+    animation: 1s spin linear infinite;
+    }
+  .Resume::before{
+    filter: blur(0.5rem);
+    opacity: 0.8;
+  }
+  @keyframes spin{
+    from{
+      --angle: 0deg;
+    }
+    to{
+      --angle: 360deg;
+    }
+  }
+
+ 
